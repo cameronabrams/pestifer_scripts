@@ -25,7 +25,6 @@ tasks:
   - domainswap:
       swap_domain_def: protein and resid 126 to 196
       anchor_domain_def: protein and resid 210 to 290 320 to 450
-    #   chain_directional_swaps: [[G,H],[H,N],[N,G]]
       chain_directional_swaps: [[G,N],[N,H],[H,G]]
       force_constant: 201
       target_numsteps: 12000
