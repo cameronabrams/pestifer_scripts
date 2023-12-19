@@ -52,4 +52,5 @@ tasks:
       package:
         basename: prod_4zmj
         restartfreq: 10000
+        ensemble: NPT
 
