@@ -1,0 +1,195 @@
+title: JN1 SARS-CoV-2 Spike
+tasks:
+  - psfgen:
+      source:
+        id: 7xix
+        file_format: PDB
+        biological_assembly: 1
+        sequence:
+          loops:
+            declash:
+              maxcycles: 20
+          glycans:
+            declash:
+              maxcycles: 500
+      mods:
+        mutations:
+          - A:S50L
+          - B:S50L
+          - C:S50L
+          - A:V83A
+          - B:V83A
+          - C:V83A
+          - A:V127F
+          - B:V127F
+          - C:V127F
+          - A:F157S
+          - B:F157S
+          - C:F157S
+          - A:R158G
+          - B:R158G
+          - C:R158G
+          - A:L212I
+          - B:L212I
+          - C:L212I
+          - A:V213G
+          - B:V213G
+          - C:V213G
+          - A:L216F
+          - B:L216F
+          - C:L216F
+          - A:H245N
+          - B:H245N
+          - C:H245N
+          - A:A264D
+          - B:A264D
+          - C:A264D
+          - A:I332V
+          - B:I332V
+          - C:I332V
+          - A:G339D
+          - B:G339D
+          - C:G339D
+          - A:K356T
+          - B:K356T
+          - C:K356T
+          - A:R403K
+          - B:R403K
+          - C:R403K
+          - A:V445H
+          - B:V445H
+          - C:V445H
+          - A:G446S
+          - B:G446S
+          - C:G446S
+          - A:N450D
+          - B:N450D
+          - C:N450D
+          - A:L452W
+          - B:L452W
+          - C:L452W
+          - A:L455S
+          - B:L455S
+          - C:L455S
+          - A:N460K
+          - B:N460K
+          - C:N460K
+          - A:T478K
+          - B:T478K
+          - C:T478K
+          - A:E484K
+          - B:E484K
+          - C:E484K
+          - A:F486P
+          - B:F486P
+          - C:F486P
+          - A:E554K
+          - B:E554K
+          - C:E554K
+          - A:A570V
+          - B:A570V
+          - C:A570V
+          - A:P621S
+          - B:P621S
+          - C:P621S
+          - A:P681R
+          - B:P681R
+          - C:P681R
+          - A:S939F
+          - B:S939F
+          - C:S939F
+          - A:P1143L
+          - B:P1143L
+          - C:P1143L
+        deletions:
+          - A:69-70
+          - B:69-70
+          - C:69-70
+          - A:144-144
+          - B:144-144
+          - C:144-144
+          - A:211-211
+          - B:211-211
+          - C:211-211
+        grafts:
+          - A_1304:4b7i,C_1-8 # 61
+          - B_1304:4b7i,C_1-8
+          - C_1304:4b7i,C_1-8
+          - A_1305:4b7i,C_1-8 # 122
+          - B_1305:4b7i,C_1-8
+          - C_1305:4b7i,C_1-8
+          - A_1306:4b7i,C_1-8 # 165
+          - B_1306:4b7i,C_1-8 # 165
+          - C_1306:4b7i,C_1-8 # 165
+          - A_1301:2wah,C_1-9 # 234
+          - B_1301:2wah,C_1-9 # 234
+          - C_1301:2wah,C_1-9 # 234
+          - A_1307:4byh,C_1-10 # 282
+          - B_1307:4byh,C_1-10 # 282
+          - C_1307:4byh,C_1-10 # 282
+          - A_1302:4byh,C_1-10 # 331
+          - B_1302:4byh,C_1-10 # 331
+          - C_1302:4byh,C_1-10 # 331
+          - A_1303:4byh,C_1-10 # 343
+          - B_1303:4byh,C_1-10 # 343
+          - C_1303:4byh,C_1-10 # 343
+          - A_1308:4b7i,C_1-8 # 603
+          - B_1308:4b7i,C_1-8 # 603
+          - C_1308:4b7i,C_1-8 # 603
+          - D_1-2:4byh,C_1#2-10 # 616
+          - J_1-2:4byh,C_1#2-10 # 616
+          - P_1-2:4byh,C_1#2-10 # 616
+          - A_1309:4b7i,C_1-8 # 657
+          - B_1309:4b7i,C_1-8 # 657
+          - C_1309:4b7i,C_1-8 # 657
+          - E_1-2:2wah,C_1#2-9 # 709
+          - K_1-2:2wah,C_1#2-9 # 709
+          - Q_1-2:2wah,C_1#2-9 # 709
+          - F_1-2:4b7i,C_1#2-8 # 717
+          - L_1-2:4b7i,C_1#2-8 # 717
+          - R_1-2:4b7i,C_1#2-8 # 717
+          - G_1-2:2wah,C_1#2-9 # 801
+          - M_1-2:2wah,C_1#2-9 # 801
+          - S_1-2:2wah,C_1#2-9 # 801
+          - A_1310:4b7i,C_1-8 # 1074
+          - B_1310:4b7i,C_1-8 # 1074
+          - C_1310:4b7i,C_1-8 # 1074
+          - H_1-2:4byh,C_1#2-10 # 1098
+          - N_1-2:4byh,C_1#2-10 # 1098
+          - T_1-2:4byh,C_1#2-10 # 1098
+          - I_1-2:2wah,C_1#2-9 # 1134
+          - O_1-2:2wah,C_1#2-9 # 1134
+          - U_1-2:2wah,C_1#2-9 # 1134
+  - md:
+      ensemble: minimize
+  - ligate:
+      steer:
+        nsteps: 4000
+  - md:
+      ensemble: minimize
+  - cleave:
+      sites:
+        - A:685-686
+        - B:685-686
+        - C:685-686
+  - md:
+      ensemble: minimize
+  - md:
+      ensemble: NVT
+  - solvate:
+  - md:
+      ensemble: minimize
+  - md:
+      ensemble: NVT
+  - md:
+      ensemble: NPT
+      nsteps: 1000
+  - md:
+      ensemble: NPT
+      nsteps: 1000
+  - terminate:
+      basename: jn1
+      package:
+        basename: prod_jn1
+        nsteps: 10000000
+        ensemble: NPT
