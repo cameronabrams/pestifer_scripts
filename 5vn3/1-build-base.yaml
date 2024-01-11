@@ -1,0 +1,66 @@
+# Author: Cameron F. Abrams, <cfa22@drexel.edu>
+#
+# pestifer input configuration file to build a modified Env ectodomain using 5vn3 as an input
+# 
+# Main modifications:
+#  - all non-HIV proteins omitted (sCD4s and Fabs)
+#  - Gly_3 bridge to close the gap left by unresolved parts of V1/2 loops
+#  - extension of all gp41 C-termini out to residue 670 as an alpha helix
+#
+# Other notes:
+#  - all NAG's present in the input structure are retained
+#  - all gaps due to zero-occupancy residues are closed by building in the zero-occupancy residues
+#  - final structure is minimized and NVT-equilibrated for a very short 2400 steps
+# 
+title: HIV-1 Env Trimer 5vn3, excluding sCD4 and Fab chains, with Gly3 stubs replacing missing v1/2 and alpha-helical extension to 670
+tasks:
+  - psfgen:
+      source:
+        id: 5vn3
+        file_format: PDB
+        biological_assembly: 1
+        exclude:
+          chains:
+            - C
+            - H
+            - L
+            - E
+            - K
+            - N 
+            - F
+            - M
+            - O
+        sequence:
+          build_zero_occupancy_C_termini:
+            - A
+            - B
+            - D
+          loops:
+            declash:
+              maxcycles: 20
+      mods:
+        substitutions:
+          - G:131A-133T,GGG
+          - I:131A-133T,GGG
+          - J:131A-133T,GGG
+        insertions: # extends gp41s to 670
+          - A,664+,KWASLW
+          - B,664+,KWASLW
+          - D,664+,KWASLW
+        crotations: # makes sure all alpha-9's are helical thru 670
+          - alpha,A,660,670
+          - alpha,B,660,670
+          - alpha,D,660,670
+  - md:
+      ensemble: minimize
+  - ligate:
+      steer:
+        nsteps: 3000
+  - md:
+      ensemble: minimize
+  - md:
+      ensemble: NVT
+      nsteps: 2400
+  - terminate:
+      basename: my_5vn3-670
+      # generates my_5vn3-670.psf and my_5vn3-670.pdb

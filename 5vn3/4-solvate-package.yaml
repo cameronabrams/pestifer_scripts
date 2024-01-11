@@ -1,0 +1,38 @@
+# Author: Cameron F. Abrams, <cfa22@drexel.edu>
+#
+# pestifer input configuration file to test solvating and packaging 
+# a pre-built PSF/PDB system
+#
+# 
+title: Solvation and packaging of a pre-built system
+tasks:
+  - psfgen:
+      source:
+        prebuilt:
+          psf: ../3-fuse/my_5vn3-6e8w-fusion.psf
+          pdb: ../3-fuse/my_5vn3-6e8w-fusion.pdb
+  - solvate:
+  - md:
+      ensemble: minimize
+      constraints:
+        atoms: protein and chain A B D and resid 681 to 710 and backbone
+        k: 201
+  - md:
+      ensemble: NPT
+      nsteps: 1000
+      constraints:
+        atoms: protein and chain A B D and resid 681 to 710 and backbone
+        k: 201
+  - md:
+      ensemble: NPT
+      nsteps: 2000
+      constraints:
+        atoms: protein and chain A B D and resid 681 to 710 and backbone
+        k: 201
+  - terminate:
+      basename: my_5vn3
+      package:
+        basename: prod_5vn3
+        constraints:
+          atoms: protein and chain A B D and resid 681 to 710 and backbone
+          k: 201

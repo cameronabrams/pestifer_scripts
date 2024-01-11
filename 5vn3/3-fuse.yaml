@@ -1,0 +1,25 @@
+# Author: Cameron F. Abrams, <cfa22@drexel.edu>
+#
+# pestifer input configuration file to fuse two
+# systems together
+#
+# 
+title: Mutation of a pre-built system
+tasks:
+  - psfgen:
+      source:
+        prebuilt:
+          psf: ../1-build-base/my_5vn3-670.psf
+          pdb: ../2-position-partners/5vn3-star.pdb
+      mods:
+        Cfusions:
+          - ../2-position-partners/6e8w-star.pdb:A:671-710,A
+          - ../2-position-partners/6e8w-star.pdb:B:671-710,B
+          - ../2-position-partners/6e8w-star.pdb:C:671-710,D
+  - md:
+      ensemble: minimize
+  - md:
+      ensemble: NVT
+      nsteps: 2400
+  - terminate:
+      basename: my_5vn3-6e8w-fusion
